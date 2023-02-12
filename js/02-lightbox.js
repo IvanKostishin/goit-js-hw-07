@@ -3,6 +3,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryItemMarkup = createGallery(galleryItems);
 
 const galleryContainer = document.querySelector('.gallery');
+
 function createGallery(items) {
     return items.map(item => `<a class="gallery__item" href="${item.original}" onclick="return false;" rel="noreferrer noopener">
   <img class="gallery__image" 
@@ -10,6 +11,7 @@ function createGallery(items) {
    alt="${item.description}" />
 </a>`).join('');
 }
+
 galleryContainer.innerHTML = galleryItemMarkup;
 
 let lightbox = new SimpleLightbox(".gallery a", {
